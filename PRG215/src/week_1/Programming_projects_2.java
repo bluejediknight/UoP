@@ -18,7 +18,8 @@ public class Programming_projects_2 {
 			
 			if (birthday > 0)
 			{
-				System.out.println("Your " + birthday + " birthday will occur in the year: " + (year + birthday));
+				System.out.println("Your " + birthday + 
+						" birthday will occur in the year: " + (year + birthday));
 			}
 		}
 		while (birthday > 0);
