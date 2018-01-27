@@ -1,62 +1,45 @@
 package week_2;
-
+ 
+import java.util.Scanner;
+ 
 public class PRG215_Week_2 {
 
 	public static void main(String[] args) {
 		
-		// Self-test 11
-		char a, b; 
-		a = 'b'; 
-		System.out.println(a); 
-		b = 'c'; 
-		System.out.println(b); 
-		a = b; 
-		System.out.println(a);
+		double tennisShoeCost = 45.89;
+		double shirtCost = 25.55;
+		double coatCost = 89.99;
+		double beltCost = 15.00;
+		double pantCost = 25.99;
 		
-		// Self-test 13
-		int quotient = 7 / 3; 
-		int remainder = 7 % 3; 
-		System.out.println("quotient = " + quotient); 
-		System.out.println("remainder = " + remainder);
+		// Variables
+		double totalAmount = 0.0;
+		double taxRate = 0.081;
 		
-		// Self test 14
-		double result = (1 / 2) * 2; 
-		System.out.println("(1 / 2) * 2 equals " + result);
+		// Display
+		System.out.println("The following clothing items are available for purchase:");
+		System.out.println("   1. Tennis Shoes for $" + tennisShoeCost + " each");
+		System.out.println("   2. Shirts for $" + shirtCost + " each");
+		System.out.println("   3. Coats for $" + coatCost + " each");
+		System.out.println("   4. Belts for $" + beltCost + " per pound");
+		System.out.println("   5. Pants for $" + pantCost + " each");
+		System.out.println("");
 		
-		// 15
-//		int result = 3 * 7 % 3 − 4 − 6; 
-//		System.out.println("result is " + result);
-//		
-//		// 16
-//		int result = 11; 
-//		result /= 2; 
-//		System.out.println("resu lt is " + result);
+		// Scanner for keyboard entry
+		Scanner keyboard = new Scanner(System.in);
 		
+		// Get Name from the user
+		System.out.print("Please enter your name: ");
+		String customerName = keyboard.next();
+		System.out.println("");
 		
+		// Ask for number of items - will use this for our loop
+		System.out.print("How many items do you wish to purchase? ");
+		int itemsToPurchase = keyboard.nextInt();
+		System.out.println("");
 		
+		// Display Results
+		System.out.println("Ok, " + customerName + ", you wish to purchase " + itemsToPurchase + " items.");
 		
-		// Bishop
-//		java.util.ArrayList<Customer> customerArray = 
-//				new java.util.ArrayList<Customer>();
-//		
-//		Customer c = new Customer("Luke");
-//		customerArray.add(c);
-//		c = new Customer("Leia");
-//		customerArray.add(c);
-//		c = new Customer("Obi-Wan");
-//		customerArray.add(c);
-//		
-//		for (Customer customer : customerArray) {
-//			System.out.println(customer.name);
-//		}
 	}
 }
-
-class Customer {
-	String name;
-	
-	public Customer(String AccountName) {
-		name = AccountName;
-	}
-}
-
