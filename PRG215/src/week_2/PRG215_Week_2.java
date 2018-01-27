@@ -61,7 +61,7 @@ public class PRG215_Week_2 {
 		
 		// Show the results
 		System.out.println("\nYour sales total: $" + totalAmount);
-		System.out.println("Your sales tax:   $" + String.format("%.2f", taxAmount) + " (" + taxAmount + ")");
+		System.out.println("Your sales tax:   $" + String.format("%.2f", taxAmount));
 		System.out.println("Total amount due: $" + String.format("%.2f", (totalAmount + taxAmount)));
 		System.out.println("");
 	}
