@@ -18,28 +18,51 @@ public class PRG215_Week_2 {
 		
 		// Display
 		System.out.println("The following clothing items are available for purchase:");
-		System.out.println("   1. Tennis Shoes for $" + tennisShoeCost + " each");
-		System.out.println("   2. Shirts for $" + shirtCost + " each");
-		System.out.println("   3. Coats for $" + coatCost + " each");
-		System.out.println("   4. Belts for $" + beltCost + " per pound");
-		System.out.println("   5. Pants for $" + pantCost + " each");
-		System.out.println("");
+		System.out.println("   1. Shoes  $" + tennisShoeCost + " each");
+		System.out.println("   2. Shirts $" + shirtCost + " each");
+		System.out.println("   3. Coats  $" + coatCost + " each");
+		System.out.println("   4. Belts  $" + beltCost + " each");
+		System.out.println("   5. Pants  $" + pantCost + " each");
 		
 		// Scanner for keyboard entry
 		Scanner keyboard = new Scanner(System.in);
 		
 		// Get Name from the user
-		System.out.print("Please enter your name: ");
+		System.out.print("\nPlease enter your name: ");
 		String customerName = keyboard.next();
-		System.out.println("");
 		
 		// Ask for number of items - will use this for our loop
-		System.out.print("How many items do you wish to purchase? ");
+		System.out.print("\nHow many items do you wish to purchase? ");
 		int itemsToPurchase = keyboard.nextInt();
-		System.out.println("");
-		
+				
 		// Display Results
-		System.out.println("Ok, " + customerName + ", you wish to purchase " + itemsToPurchase + " items.");
+		System.out.print("\nOk, " + customerName + ", you wish to purchase " + itemsToPurchase + " item(s).");
 		
+		// Start purchase
+		System.out.println("\nPlease enter the productID you wish to purchase.\n");
+		
+		// Loop for the number of items 
+		for (int loopCounter = 0; loopCounter < itemsToPurchase; loopCounter++)
+		{
+			// Prompt user for the item
+			System.out.print("Please enter the ID number " + (loopCounter+1) + ": ");
+			int itemID = keyboard.nextInt();
+			
+			// Add the appropriate cost
+			if (itemID==1) { totalAmount+=tennisShoeCost; }
+			if (itemID==2) { totalAmount+=shirtCost; }
+			if (itemID==3) { totalAmount+=coatCost; }
+			if (itemID==4) { totalAmount+=beltCost; }
+			if (itemID==5) { totalAmount+=pantCost; }
+		}		
+		
+		// Calculate the taxes
+		double taxAmount = totalAmount * taxRate;
+		
+		// Show the results
+		System.out.println("\nYour sales total: $" + totalAmount);
+		System.out.println("Your sales tax:   $" + String.format("%.2f", taxAmount));
+		System.out.println("Total amount due: $" + String.format("%.2f", (totalAmount + taxAmount)));
+		System.out.println("");
 	}
 }
