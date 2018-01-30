@@ -1,13 +1,16 @@
 package Week_5;
+
+import java.util.InputMismatchException;
+
 public class ItemsForSale {
      public String itemName;
      public double itemCost;
      public boolean taxable;
      public void PopulateItem(String iName, double iCost, boolean canTax)
      {
-     this.itemName = iName;
-     this.itemCost = iCost;
-     this.taxable = canTax;
+	     this.itemName = iName;
+	     this.itemCost = iCost;
+	     this.taxable = canTax;
      }
 }
 class PRG215_Week_5 {
