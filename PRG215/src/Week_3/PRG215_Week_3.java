@@ -4,54 +4,87 @@ public class PRG215_Week_3 {
 
 	public static void main(String[] args) {
 		
-		// Self Test 7
-		for (int n = 1; n <= 4; n++) {
-		     System.out.println(n);
-		}
-		System.exit(0);
+		// Item arrays
+		String[] itemNames = {"Tennis Shoes", "Shirts", "Coats", "Belts", "Pants"};
+		double[] itemCosts = {48.89, 25.55, 89.99, 15.00, 25.99};
 		
 		
+		// Variables
+		double totalAmount = 0.0;
+		double taxRate = 0.081;
 		
-		int product = 1, number; 
-		for (number = 1; number <= 10; number++);
+		
+		// Discounts
+		double discountRate = 0.025; // 2.5%
+		double amountToQualifyForDiscount = 100;
+		double discountAmount = 0;
+		
+		
+		// Display Items for sale
+		System.out.println("The following clothing items are available for purshase.");
+		for (int i=0; i < itemNames.length; i++)
 		{
-		     product = product * number;
+			System.out.println("    " + (i + 1) + ". " + itemNames[i] + " for $" + itemCosts[i] + " each.");
 		}
-		System.out.println("Product of the numbers 1 through 10 is " + product);
 		
 		
+		// Get customer name
+		java.util.Scanner keyboard = new java.util.Scanner(System.in);
+		System.out.println("Please enter your name: ");
+		String customerName = keyboard.next();
+		System.out.println("");
 		
 		
+		// Display the Customer Name and provide Instructions
+		System.out.println("Ok, " + customerName + ", please enter the ProductID you wish to purchase.  Enter 0 when you are finished.\n");
 		
-		int count = 0; 
-		while (count < 5)
+		// Loop until done
+		int itemID = 0;
+		int itemCounter = 1;
+		do
 		{
-		   System.out.println(count);
-		   count++;
+			// Prompt User
+			System.out.print("ProductID number " + itemCounter + " (0 to exit): ");
+			itemID = keyboard.nextInt();
+			
+			// If the user
+			if (itemID > 0)
+			{
+				// validate
+				if (itemID > 5)
+				{
+					System.out.println("Invalid Item Id.");
+					continue;
+				}
+				
+				// Add total
+				totalAmount = totalAmount + itemCosts[itemID - 1];
+				
+				// Increment Counter
+				itemCounter++;
+			}
 		}
-		System.out.println("count after loop = " + count);
+		while(itemID != 0);
+				
+		// Calculate Discount		
+		if (totalAmount >= amountToQualifyForDiscount)
+		{
+			discountAmount = totalAmount * discountRate;			
+		}
+		else
+		{
+			discountAmount = 0;
+		}
+			
+		// Calculate Taxes
+		double taxAmount = (totalAmount - discountAmount) * taxRate;
 		
-
-		
-		
-		// Self Test 1
-		int[] anArray = new int[10];
-		for (int i = 0; i <anArray.length; i++)
-		     anArray[i] = 2 * i;
-		for (int element : anArray)
-		     System.out.print(element + " ");
-		System.out.println();
-		
-		// Self Test 2
-		char[] vowel = {'a', 'e', 'i', 'o', 'u'};
-		for (int index = 0; index <vowel.length; index++)
-		     System.out.println(vowel[index]);
-		
-		
-		// Self Test 3
-		//double tide[] = {12.2, −7.3, 14.2, 11.3};
-		//System.out.println("Tide 1 is " + tide[1]);
-		//System.out.println("Tide 2 is " + tide[2]);
+		// Display the Results
+		System.out.println("\nYou selected " + itemCounter + " items to purchase.");
+		System.out.println("Sales Total   $" + totalAmount);
+		System.out.println("Discount      $" + String.format("%.2f", discountAmount));
+		System.out.println("Sales Tax     $" + String.format("%.2f", taxAmount));
+		System.out.println("Total Due     $" + String.format("%.2f", (totalAmount - discountAmount + taxAmount)) + "\n");		
 
 	}
 
