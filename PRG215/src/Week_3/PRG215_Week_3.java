@@ -21,7 +21,7 @@ public class PRG215_Week_3 {
 		
 		
 		// Display Items for sale
-		System.out.println("The following clothing items are available for purshase.");
+		System.out.println("The following clothing items are available for purchase.");
 		for (int i=0; i < itemNames.length; i++)
 		{
 			System.out.println("    " + (i + 1) + ". " + itemNames[i] + " for $" + itemCosts[i] + " each.");
@@ -36,7 +36,7 @@ public class PRG215_Week_3 {
 		
 		
 		// Display the Customer Name and provide Instructions
-		System.out.println("Ok, " + customerName + ", please enter the ProductID you wish to purchase.  Enter 0 when you are finished.\n");
+		System.out.println("Ok, " + customerName + ", please enter the ProductID you wish to purchase.\nEnter 0 when you are finished.\n");
 		
 		// Loop until done
 		int itemID = 0;
@@ -81,7 +81,7 @@ public class PRG215_Week_3 {
 		
 		// Display the Results
 		System.out.println("\nYou selected " + itemCounter + " items to purchase.");
-		System.out.println("Sales Total   $" + totalAmount);
+		System.out.println("Sales Total   $" + String.format("%.2f", totalAmount));
 		System.out.println("Discount      $" + String.format("%.2f", discountAmount));
 		System.out.println("Sales Tax     $" + String.format("%.2f", taxAmount));
 		System.out.println("Total Due     $" + String.format("%.2f", (totalAmount - discountAmount + taxAmount)) + "\n");		
