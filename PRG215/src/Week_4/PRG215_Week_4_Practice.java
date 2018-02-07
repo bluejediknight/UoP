@@ -9,13 +9,15 @@ public class PRG215_Week_4_Practice {
 		Integer n = new Integer(77);
 		int m = 77;
 		n = m;
-		m = n; 
+		m = n;  
 		System.exit(0);
 		
 		
 		int n1 = 5;
-		double n2 = -22;
-		double result = Math.min(n1, n2);
+		float n2 = 10;
+		float result = Math.min(n1, n2);
+		
+		
 		System.out.println("result: " + result);
 		
 		System.exit(0);
