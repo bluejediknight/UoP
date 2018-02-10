@@ -7,7 +7,7 @@ public class Practice {
 		GetRequest g = new GetRequest();
 		try {			
 			
-			g.sendGet("http://www.harrisonlogic.com");
+			g.sendGet("http://www.apple.com");
 			g.sendGet("http://www.microsoft.com/");
 			
 			
