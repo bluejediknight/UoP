@@ -4,6 +4,29 @@ public class PRG215_Week_4_Practice {
 
 	public static void main(String[] args) {
 		
+		// This is the Employee Class
+		Employee chris = new Employee();
+		
+		// This is the Manager Class that uses
+		// 	the Employee Class as its superclass
+		Manager bernadine = new Manager();
+		
+		// The "company" property is defined in the 
+		//	superclass, Employee
+		System.out.println("\tChris works for " + chris.company);
+		System.out.println("\tBernadine works for " + bernadine.company);
+		
+		
+		
+		
+		
+		
+		
+		 
+		
+		
+		System.exit(0);
+		
 		java.util.Scanner s = new java.util.Scanner(System.in);
 		
 		Integer n = new Integer(77);
