@@ -1,10 +1,37 @@
 package Week_5;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Week_5_Practice {
 
 	public static void main(String[] args) {
+		
+		
+		File file = new File("sith.txt");
+		
+		try 
+		{	
+			// Open the file
+			java.util.Scanner s = new java.util.Scanner(file);
+			
+			// Write the contents
+			while(s.hasNextLine()) {
+				System.out.println(s.nextLine());
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println("EXECPTION: " + e.getMessage());
+		}
+		
+		
+		
+		
+		
+		
+		System.exit(0);
+		
 		
 		try
 		{
@@ -12,15 +39,13 @@ public class Week_5_Practice {
 			File f = new File("none.txt");
 			java.util.Scanner s = new java.util.Scanner(f);
 		}
-		catch (IOException e) {
-
-			System.out.println("IO EXECPTION");
-			
+		catch (IOException e) 
+		{
+			System.out.println("IO EXECPTION");			
 		}
-		catch (Exception e) {
-
-			System.out.println("EXECPTION");
-			
+		catch (Exception e) 
+		{
+			System.out.println("EXECPTION");			
 		}
 		finally
 		{
