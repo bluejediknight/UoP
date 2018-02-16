@@ -1,0 +1,4 @@
+Fries	$6.00
+Burger	$10.50
+Hot Dog	$5.50
+Nachos	$6.50
