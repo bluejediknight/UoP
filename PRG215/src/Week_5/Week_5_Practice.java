@@ -8,7 +8,7 @@ public class Week_5_Practice {
 	public static void main(String[] args) {
 		
 		
-		File file = new File("xxx.txt");
+		File file = new File("sith.txt");
 		
 		try 
 		{	

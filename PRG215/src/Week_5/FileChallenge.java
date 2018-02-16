@@ -7,36 +7,39 @@ public class FileChallenge {
 
 	public static void main(String[] args) {
 
+		// File variables
 		File itemFile = new File("items.txt");
 		File priceFile = new File("prices.txt");
 		
 		try {
-			// Get the contents of the File
-			java.util.Scanner s = new java.util.Scanner(itemFile);			
+			
+			// Scanners (file and input)
+			java.util.Scanner f = new java.util.Scanner(itemFile);	
+			java.util.Scanner s = new java.util.Scanner(System.in);
+			
+			// Output file
+			PrintWriter outputfile = new PrintWriter(priceFile);
+			
+			// Temp variables
+			String item;
+			Double price;
 			
 			// Get the Menu Items into an ArrayList
-			ArrayList<String> items = new ArrayList<String>();
-			while(s.hasNextLine()) {
-				items.add(s.nextLine());
-			}
-			
-			// Get the prices in a parallel Array
-			ArrayList<Double> prices = new ArrayList<Double>();
-			for(String item: items)
-			{
+			while(f.hasNextLine()) {
+				
+				// Get the Price
+				item = f.nextLine();
 				System.out.print("Enter the price for " + item + ": ");
-				Double price = s.nextDouble();
-				prices.add(price);
-			}
+				price = s.nextDouble();
+				
+				// Write to the Output file
+				outputfile.println(item + "\t$" + String.format("%.2f", price));
+				
+			}	
 			
-			
-			
+			// Close the file!
+			outputfile.close();
 		
-		}
-		catch (IOException e) {
-
-			System.out.println("IO EXECPTION: " + e.toString());
-			
 		}
 		catch (Exception e) {
 
@@ -45,7 +48,7 @@ public class FileChallenge {
 		}
 		finally
 		{
-			// end the program
+			System.out.println("The output file was successfully written");
 		}		
 		
 
