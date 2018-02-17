@@ -17,14 +17,14 @@ public class FileChallenge {
 			java.util.Scanner f = new java.util.Scanner(itemFile);	
 			java.util.Scanner s = new java.util.Scanner(System.in);
 			
-			// Output file
-			PrintWriter outputfile = new PrintWriter(priceFile);
-			
 			// Temp variables
 			String item;
 			Double price;
 			
-			// Get the Menu Items into an ArrayList
+			// Output file
+			PrintWriter outputfile = new PrintWriter(priceFile);
+						
+			// Iterate all the items
 			while(f.hasNextLine()) {
 				
 				// Get the Price
